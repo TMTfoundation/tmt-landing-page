@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calendar | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-  <link href='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css' rel='stylesheet' />
+  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid@6.1.8/index.global.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/timegrid@6.1.8/index.global.min.js"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -28,7 +31,7 @@
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
     header p {
@@ -38,17 +41,45 @@
     }
 
     nav.main-nav {
-      background-color: #e0e7ff;
+      background-color: #e6ebff;
       border-bottom: 1px solid #ccc;
-      display: flex;
-      justify-content: center;
     }
 
-    .nav-wrapper {
+    .main-nav .nav-container {
       display: flex;
-      gap: 2rem;
-      padding: 0.75rem 0;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0.5rem 1rem;
       flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .nav-links a {
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      background-color: #d6dfff;
+      border-radius: 4px;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     nav.sub-nav {
@@ -59,22 +90,28 @@
       flex-wrap: wrap;
     }
 
-    nav.main-nav a,
     nav.sub-nav a {
+      padding: 0.75rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover,
     nav.sub-nav a:hover {
       background-color: #d6dfff;
-      padding: 0.75rem 1rem;
-      border-radius: 5px;
     }
 
     main {
       padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    #calendar {
+      background: white;
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     footer {
@@ -84,32 +121,30 @@
       padding: 1rem;
       font-size: 0.875rem;
     }
-
-    #calendar {
-      max-width: 900px;
-      margin: 0 auto;
-      background-color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
   </style>
 </head>
 <body>
   <header>
-    <a href="about.html"><img src="logo.png" alt="TMT Foundation Logo" /></a>
+    <a href="about.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
     <h1>The Triton Mock Trial Foundation</h1>
     <p>Supporting Mock Trial at UCSD</p>
   </header>
 
   <nav class="main-nav">
-    <div class="nav-wrapper">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="calendar.html">Calendar</a>
-      <a href="join.html">Join</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="join.html">Join</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
     </div>
   </nav>
 
@@ -121,7 +156,7 @@
   </nav>
 
   <main>
-    <h2 style="text-align: center;">Foundation Calendar</h2>
+    <h2 style="text-align:center;">Foundation Calendar</h2>
     <div id="calendar"></div>
   </main>
 
@@ -129,13 +164,18 @@
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
 
-  <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const calendarEl = document.getElementById('calendar');
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
-        height: 'auto'
+        height: 'auto',
+        headerToolbar: {
+          left: 'today prev,next',
+          center: 'title',
+          right: 'dayGridMonth,timeGridWeek'
+        },
+        events: [] // Add events here later
       });
       calendar.render();
     });
