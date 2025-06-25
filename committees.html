@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Committees | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,12 +60,23 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      text-align: justify;
     }
 
     footer {
@@ -92,9 +111,18 @@
   </nav>
 
   <main>
-    <h2>Committees</h2>
-    <p>The TMT Foundation is supported by a growing network of alumni and community leaders. We are building committees to help guide our mission, including fundraising, outreach, mentorship, and strategic planning.</p>
-    <p>Check back soon for updates on how to get involved.</p>
+    <section class="content">
+      <h2>Committees</h2>
+      <p>
+        The Foundation is guided by the passion and expertise of volunteers organized into committees. These committees help us organize alumni outreach, plan events, assist with fundraising, and support current students.
+      </p>
+      <p>
+        Committee service is open to alumni, parents, and friends of the program. It’s a meaningful way to give back and stay engaged.
+      </p>
+      <p>
+        To express interest in joining a committee, please email us at <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>.
+      </p>
+    </section>
   </main>
 
   <footer>
