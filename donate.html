@@ -18,11 +18,27 @@
       color: #222;
     }
 
-    header, footer {
+    header {
       background-color: var(--ucsd-blue);
       color: white;
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 1.5rem;
+    }
+
+    header img {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin: 0;
+      font-style: italic;
     }
 
     main {
@@ -33,12 +49,6 @@
       max-width: 800px;
       margin: 0 auto;
       text-align: center;
-    }
-
-    h1 {
-      color: var(--ucsd-blue);
-      font-size: 2rem;
-      margin-bottom: 1rem;
     }
 
     p {
@@ -71,12 +81,22 @@
     .button:hover {
       background-color: #e6b800;
     }
+
+    footer {
+      background-color: var(--ucsd-blue);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Support the TMT Foundation</h1>
+    <img src="logo.png" alt="TMT Foundation Logo" />
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p class="tagline">Supporting Mock Trial at UCSD</p>
   </header>
 
   <main>
