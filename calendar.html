@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calendar | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,12 +60,23 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
       padding: 2rem;
       text-align: center;
+    }
+
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      text-align: justify;
     }
 
     footer {
@@ -92,8 +111,15 @@
   </nav>
 
   <main>
-    <h2>Upcoming Calendar</h2>
-    <p>Check back soon for a full list of 2025–2026 season events, scrimmages, and invitationals.</p>
+    <section class="content">
+      <h2>Program Calendar</h2>
+      <p>
+        Stay up to date with key events, tournaments, and alumni programs supported by the TMT Foundation. Our full calendar for the academic year will be posted soon.
+      </p>
+      <p>
+        Check back here for information about regional tournaments, alumni mixers, fundraisers, and more.
+      </p>
+    </section>
   </main>
 
   <footer>
