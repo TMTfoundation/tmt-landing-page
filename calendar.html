@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Calendar | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-  <!-- FullCalendar CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet" />
-
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -48,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -78,24 +101,15 @@
       text-align: center;
     }
 
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .content p {
-      max-width: 700px;
-      margin: 0 auto 1rem;
-      text-align: justify;
-    }
-
-    #calendar {
+    .calendar-container {
       max-width: 900px;
-      margin: 2rem auto;
-      background-color: white;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      margin: 0 auto;
+    }
+
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
     }
 
     footer {
@@ -104,6 +118,27 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
+
+      iframe {
+        height: 500px;
+      }
     }
   </style>
 </head>
@@ -123,6 +158,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -133,50 +171,20 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>Program Calendar</h2>
-      <p>
-        Use this calendar to stay up to date on tournaments, alumni events, and major milestones for UCSD Mock Trial and the TMT Foundation.
-      </p>
-    </section>
-
-    <div id="calendar"></div>
+    <h2>Foundation Calendar</h2>
+    <div class="calendar-container">
+      <!-- Replace the src below with your Google Calendar embed link -->
+      <iframe src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FLos_Angeles"></iframe>
+    </div>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
 
-  <!-- FullCalendar JS -->
-  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
-
   <script>
     window.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('fade-in');
-
-      const calendarEl = document.getElementById('calendar');
-      if (calendarEl) {
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth',
-          height: 'auto',
-          events: [
-            {
-              title: 'Fall Invitational',
-              start: '2025-10-18'
-            },
-            {
-              title: 'Alumni Mixer',
-              start: '2025-11-03'
-            },
-            {
-              title: 'Regional Tournament',
-              start: '2026-02-08',
-              end: '2026-02-10'
-            }
-          ]
-        });
-        calendar.render();
-      }
     });
 
     document.querySelectorAll('a[href]').forEach(link => {
