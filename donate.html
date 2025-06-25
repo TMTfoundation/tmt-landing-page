@@ -11,6 +11,10 @@
       --ucsd-gold: #ffcd00;
     }
 
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -45,7 +49,7 @@
 
     main {
       flex: 1;
-      max-width: 900px;
+      max-width: 700px;
       margin: 2rem auto;
       padding: 0 1rem;
       text-align: center;
@@ -54,7 +58,7 @@
     .donorbox-wrapper {
       display: flex;
       justify-content: center;
-      margin: 2rem auto;
+      margin: 2rem 0;
     }
 
     iframe {
@@ -70,8 +74,8 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
-      margin-top: 1.5rem;
       display: inline-block;
+      margin-top: 1.5rem;
     }
 
     .button:hover {
@@ -84,6 +88,7 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+      margin-top: auto;
     }
   </style>
 </head>
@@ -105,8 +110,8 @@
         src="https://donorbox.org/embed/fall-quarter-invitationals"
         name="donorbox"
         allowpaymentrequest="true"
-        scrolling="no"
         seamless="seamless"
+        scrolling="no"
         height="900"
         allow="payment">
       </iframe>
