@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tournaments | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,12 +60,23 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      text-align: justify;
     }
 
     footer {
@@ -92,9 +111,18 @@
   </nav>
 
   <main>
-    <h2>Tournaments</h2>
-    <p>Each year, Triton Mock Trial competes at invitational and championship tournaments across the country. The TMT Foundation provides funding for travel, registration fees, and program development to ensure that all students can participate regardless of financial background.</p>
-    <p>Stay tuned for highlights and results from our 2025–2026 tournament season.</p>
+    <section class="content">
+      <h2>Tournaments</h2>
+      <p>
+        UCSD Mock Trial proudly competes across the nation, and the Foundation helps make that possible by supporting travel, registration, and hosting efforts.
+      </p>
+      <p>
+        Our annual Fall Quarter Invitational brings together teams from across the country for a weekend of elite competition and community building.
+      </p>
+      <p>
+        If your program is interested in receiving an invitation or learning more, please email us at <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>.
+      </p>
+    </section>
   </main>
 
   <footer>
