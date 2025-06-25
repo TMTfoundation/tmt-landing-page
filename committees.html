@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -79,9 +106,9 @@
       margin-bottom: 1.2rem;
     }
 
-    .content p {
+    .content {
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-align: justify;
     }
 
@@ -91,6 +118,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +154,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -120,24 +167,15 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>Foundation Committees</h2>
+    <h2>Committees</h2>
+    <div class="content">
       <p>
-        The TMT Foundation operates through several dedicated committees that ensure the continued success of UCSD Mock Trial. Each committee is composed of alumni and community members who lend their time and expertise.
+        The TMT Foundation is supported by a number of dedicated volunteer committees. These groups help plan events, support student needs, manage outreach, and keep alumni connected. Committee participation is open to alumni and supporters passionate about sustaining the success of UCSD Mock Trial.
       </p>
       <p>
-        <strong>Fundraising Committee:</strong> Coordinates campaigns, donor outreach, and sponsorship opportunities.
+        More information on committee roles and sign-up opportunities will be posted soon.
       </p>
-      <p>
-        <strong>Events Committee:</strong> Plans alumni events, networking nights, and social gatherings.
-      </p>
-      <p>
-        <strong>Alumni Relations Committee:</strong> Maintains engagement with past team members and builds alumni networks.
-      </p>
-      <p>
-        <strong>Coaching Advisory Committee:</strong> Provides guidance to the coaching staff and helps support program development.
-      </p>
-    </section>
+    </div>
   </main>
 
   <footer>
