@@ -45,9 +45,24 @@
 
     .nav-wrapper {
       display: flex;
-      gap: 2rem;
-      padding: 0.75rem 0;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
+      padding: 0.5rem 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
       flex-wrap: wrap;
+    }
+
+    .nav-search input {
+      padding: 0.4rem 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
     }
 
     nav.sub-nav {
@@ -55,33 +70,21 @@
       justify-content: center;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
+      padding: 0.5rem 0;
+      gap: 2rem;
       flex-wrap: wrap;
     }
 
-    nav.main-nav a,
-    nav.sub-nav a {
+    nav a {
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover,
-    nav.sub-nav a:hover {
+    nav a:hover {
       background-color: #d6dfff;
-      padding: 0.75rem 1rem;
-      border-radius: 5px;
-    }
-
-    .search-container {
-      position: absolute;
-      right: 1rem;
-      top: 1.75rem;
-    }
-
-    .search-container input {
       padding: 0.5rem;
       border-radius: 4px;
-      border: 1px solid #ccc;
     }
 
     main {
@@ -107,12 +110,17 @@
 
   <nav class="main-nav">
     <div class="nav-wrapper">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="calendar.html">Calendar</a>
-      <a href="join.html">Join</a>
-      <a href="donate.html">Donate</a>
-      <a href="contact.html">Contact</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="join.html">Join</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-search">
+        <input type="text" placeholder="Search..." />
+      </div>
     </div>
   </nav>
 
@@ -126,7 +134,6 @@
   <main>
     <h2>About the Foundation</h2>
     <p>The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial at the University of California, San Diego.</p>
-    <p>We fundraise, provide mentorship, and build community to ensure the next generation of advocates thrives.</p>
   </main>
 
   <footer>
