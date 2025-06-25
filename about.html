@@ -1,18 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-  body.fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  body.fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease;
-  }
-</style>
-<meta charset="UTF-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
@@ -22,6 +11,12 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     header {
@@ -31,8 +26,8 @@
       padding: 1rem 0 0.5rem;
     }
 
-    header img {
-      width: 60px;
+    header a img {
+      width: 150px;
       height: auto;
     }
 
@@ -75,13 +70,13 @@
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     main h2 {
       font-size: 1.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
     .content p {
@@ -101,15 +96,16 @@
 </head>
 <body>
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="TMT Foundation Logo" style="width: 150px; height: auto;" />
-  </a>
-  <h1>The Triton Mock Trial Foundation</h1>
-  <p>Supporting Mock Trial at UCSD</p>
-</header>
+    <a href="index.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
+  </header>
 
   <nav class="main-nav">
-    <a href="index.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="calendar.html">Calendar</a>
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
@@ -125,12 +121,15 @@
 
   <main>
     <section class="content">
-      <h2>About the Foundation</h2>
+      <h2>About the TMT Foundation</h2>
       <p>
-        The Triton Mock Trial Foundation is a nonprofit organization dedicated to supporting the undergraduate mock trial program at UC San Diego. Our mission is to build long-term sustainability for the team by providing mentorship, funding, alumni networking, and strategic guidance.
+        The Triton Mock Trial Foundation was created to support the nationally ranked UC San Diego Mock Trial program. Founded by alumni and supported by the community, we work to ensure long-term sustainability for the program through financial support, alumni mentorship, and community engagement.
       </p>
       <p>
-        Founded by alumni and supporters of UCSD Mock Trial, the foundation works to ensure future generations of Triton advocates have the resources they need to thrive in the courtroom and beyond.
+        Our foundation provides funding for tournament travel, coaching, and competitive preparation. We also organize events and initiatives that keep alumni involved and students inspired.
+      </p>
+      <p>
+        Whether you’re an alum, parent, or supporter of the legal advocacy community, we welcome your involvement and thank you for your commitment to future generations of student advocates.
       </p>
     </section>
   </main>
@@ -138,33 +137,28 @@
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = 0;
-  requestAnimationFrame(() => {
-    document.body.classList.add('fade-in');
-  });
-});
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
 
-  const links = document.querySelectorAll('a[href]');
-
-  links.forEach(link => {
-    // Only apply transition to internal links
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.href.includes('#') &&
+        !link.href.startsWith('mailto:') &&
+        !link.target
+      ) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
           setTimeout(() => {
-            window.location = href;
-          }, 300); // Match this with CSS transition time
-        }
-      });
-    }
-  });
-</script>
+            window.location = link.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
