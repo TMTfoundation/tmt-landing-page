@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -74,12 +101,7 @@
       text-align: center;
     }
 
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .tournament-text {
+    .content {
       max-width: 700px;
       margin: 0 auto;
       text-align: justify;
@@ -91,6 +113,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +149,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -120,14 +162,10 @@
   </nav>
 
   <main>
-    <h2>Tournaments</h2>
-    <div class="tournament-text">
-      <p>
-        The TMT Foundation proudly supports the competitive travel of UCSD Mock Trial teams, including regional scrimmages, invitational tournaments, and AMTA-sanctioned competitions.
-      </p>
-      <p>
-        Each season, our students compete across the country—earning accolades, building skills, and representing UC San Diego on the national stage. Your support helps cover registration, lodging, and travel expenses for these vital experiences.
-      </p>
+    <h2>Mock Trial Tournaments</h2>
+    <div class="content">
+      <p>The TMT Foundation is proud to support UCSD Mock Trial's participation in regional, invitational, and national tournaments throughout the year. Competing across the country builds advocacy skills, confidence, and camaraderie among students.</p>
+      <p>Our foundation also helps host tournaments at UC San Diego, welcoming teams from across the nation and giving students a chance to shine on their home campus. Details about upcoming tournaments will be posted here and on our calendar.</p>
     </div>
   </main>
 
