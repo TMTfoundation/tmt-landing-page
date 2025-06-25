@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Membership | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -17,7 +17,8 @@
       background-color: #002855;
       color: white;
       text-align: center;
-      padding: 2rem 1rem 1rem;
+      padding: 1.5rem 0 1rem;
+      position: relative;
     }
 
     header img {
@@ -27,7 +28,7 @@
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     header p {
@@ -36,46 +37,25 @@
       font-size: 1rem;
     }
 
-    nav.main-nav {
-      background-color: #e6ebff;
-      border-bottom: 1px solid #ccc;
-    }
-
-    .main-nav .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0.5rem 1rem;
-      flex-wrap: wrap;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      flex-grow: 1;
-    }
-
-    .nav-links a {
-      color: #002855;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.5rem;
-    }
-
-    .nav-links a:hover {
-      background-color: #d6dfff;
-      border-radius: 4px;
+    .search-bar {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
     }
 
     .search-bar input {
-      padding: 0.4rem 0.75rem;
-      font-size: 0.9rem;
-      border: 1px solid #ccc;
+      padding: 0.5rem;
       border-radius: 4px;
+      border: 1px solid #ccc;
+      font-family: 'Inter', sans-serif;
+    }
+
+    nav.nav-links {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      flex-wrap: wrap;
+      padding: 0.5rem 0;
     }
 
     nav.sub-nav {
@@ -84,17 +64,22 @@
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
       flex-wrap: wrap;
+      padding: 0.5rem 0;
     }
 
-    nav.sub-nav a {
+    .nav-links a,
+    .sub-nav a {
       padding: 0.75rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.sub-nav a:hover {
+    .nav-links a:hover,
+    .sub-nav a:hover {
       background-color: #d6dfff;
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
     }
 
     main {
@@ -104,11 +89,6 @@
       text-align: center;
     }
 
-    main p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
     footer {
       background-color: #002855;
       color: white;
@@ -116,31 +96,50 @@
       padding: 1rem;
       font-size: 0.875rem;
     }
+
+    @media (max-width: 600px) {
+      header img {
+        width: 100px;
+      }
+
+      header h1 {
+        font-size: 1.25rem;
+      }
+
+      .search-bar {
+        position: static;
+        margin-top: 1rem;
+      }
+
+      nav.nav-links,
+      nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      main {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <a href="about.html">
-      <img src="logo.png" alt="TMT Foundation Logo" />
-    </a>
+    <a href="about.html"><img src="logo.png" alt="TMT Foundation Logo" /></a>
     <h1>The Triton Mock Trial Foundation</h1>
     <p>Supporting Mock Trial at UCSD</p>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </header>
 
-  <nav class="main-nav">
-    <div class="nav-container">
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="calendar.html">Calendar</a>
-        <a href="join.html">Join</a>
-        <a href="donate.html">Donate</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-      </div>
-    </div>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="join.html">Join</a>
+    <a href="donate.html">Donate</a>
+    <a href="contact.html">Contact</a>
   </nav>
 
   <nav class="sub-nav">
@@ -153,13 +152,11 @@
   <main>
     <h2>Membership</h2>
     <p>
-      Becoming a member of the Triton Mock Trial Foundation connects you to a community of alumni, legal professionals, and advocates who support the growth of UCSD Mock Trial.
+      Becoming a member of the Triton Mock Trial Foundation means supporting future generations of student advocates at UCSD.
     </p>
     <p>
-      Members receive updates, invitations to exclusive events, and opportunities to engage with the next generation of competitors.
-    </p>
-    <p>
-      Membership is open to all supporters. Join us in advancing advocacy education at UCSD.
+      Members receive updates, early invitations to events, and opportunities to connect with the national mock trial network. 
+      Whether you're an alum, a parent, or an enthusiastic supporter, membership strengthens our community.
     </p>
   </main>
 
