@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,33 +60,32 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
-    iframe {
-      border: none;
-      width: 100%;
-      max-width: 500px;
-      height: 900px;
-      margin: 2rem auto;
-      display: block;
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
     }
 
-    .button {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background-color: #ffc800;
-      color: #002855;
-      font-weight: bold;
-      border: none;
-      border-radius: 4px;
-      text-decoration: none;
+    .content {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+    }
+
+    .content p {
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+
+    .donation-widget {
+      display: flex;
+      justify-content: center;
     }
 
     footer {
@@ -106,21 +113,39 @@
   </nav>
 
   <nav class="sub-nav">
-    <a href="#">Membership</a>
-    <a href="#">Committees</a>
-    <a href="#">Tournaments</a>
-    <a href="#">Events</a>
+    <a href="membership.html">Membership</a>
+    <a href="committees.html">Committees</a>
+    <a href="tournaments.html">Tournaments</a>
+    <a href="events.html">Events</a>
   </nav>
 
   <main>
-    <p>
-      Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
-    </p>
-
-    <iframe src="https://donorbox.org/embed/fall-quarter-invitationals" allowpaymentrequest="true" seamless="seamless"></iframe>
-
-    <a href="index.html" class="button">Back to Home</a>
+    <div class="content">
+      <h2>Support the TMT Foundation</h2>
+      <p>
+        Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
+      </p>
+      <p>
+        Use the secure form below to make a donation through Donorbox.
+      </p>
+    </div>
+    <div class="donation-widget">
+      <iframe src="https://donorbox.org/embed/fall-quarter-invitationals?"
+              name="donorbox"
+              allowpaymentrequest
+              seamless
+              frameborder="0"
+              scrolling="no"
+              height="900px"
+              width="100%"
+              style="max-width: 500px; min-width: 300px; max-height: none !important"
+              allow="payment">
+      </iframe>
+    </div>
   </main>
 
   <footer>
-    © 2025 Triton Mock Trial Foundation. All ri
+    © 2025 Triton Mock Trial Foundation. All rights reserved.
+  </footer>
+</body>
+</html>
