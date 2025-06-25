@@ -64,7 +64,9 @@
     iframe {
       width: 100%;
       max-width: 500px;
+      height: 900px;
       border: none;
+      overflow: hidden;
     }
 
     .button {
@@ -75,7 +77,7 @@
       font-weight: bold;
       border-radius: 5px;
       display: inline-block;
-      margin-top: 1.5rem;
+      margin-top: 1rem;
     }
 
     .button:hover {
@@ -88,7 +90,6 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
-      margin-top: auto;
     }
   </style>
 </head>
@@ -112,7 +113,6 @@
         allowpaymentrequest="true"
         seamless="seamless"
         scrolling="no"
-        height="900"
         allow="payment">
       </iframe>
     </div>
