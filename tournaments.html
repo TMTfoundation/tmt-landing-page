@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <style>
-  body.fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  body.fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease;
-  }
-</style>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tournaments | Triton Mock Trial Foundation</title>
@@ -23,6 +11,12 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     header {
@@ -32,8 +26,8 @@
       padding: 1rem 0 0.5rem;
     }
 
-    header img {
-      width: 60px;
+    header a img {
+      width: 150px;
       height: auto;
     }
 
@@ -82,12 +76,12 @@
 
     main h2 {
       font-size: 1.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    .content p {
+    .tournament-text {
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-align: justify;
     }
 
@@ -102,15 +96,16 @@
 </head>
 <body>
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="TMT Foundation Logo" style="width: 150px; height: auto;" />
-  </a>
-  <h1>The Triton Mock Trial Foundation</h1>
-  <p>Supporting Mock Trial at UCSD</p>
-</header>
+    <a href="index.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
+  </header>
 
   <nav class="main-nav">
-    <a href="index.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="calendar.html">Calendar</a>
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
@@ -125,51 +120,42 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>Tournaments</h2>
+    <h2>Tournaments</h2>
+    <div class="tournament-text">
       <p>
-        UCSD Mock Trial proudly competes across the nation, and the Foundation helps make that possible by supporting travel, registration, and hosting efforts.
+        The TMT Foundation proudly supports the competitive travel of UCSD Mock Trial teams, including regional scrimmages, invitational tournaments, and AMTA-sanctioned competitions.
       </p>
       <p>
-        Our annual Fall Quarter Invitational brings together teams from across the country for a weekend of elite competition and community building.
+        Each season, our students compete across the country—earning accolades, building skills, and representing UC San Diego on the national stage. Your support helps cover registration, lodging, and travel expenses for these vital experiences.
       </p>
-      <p>
-        If your program is interested in receiving an invitation or learning more, please email us at <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>.
-      </p>
-    </section>
+    </div>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = 0;
-  requestAnimationFrame(() => {
-    document.body.classList.add('fade-in');
-  });
-});
 
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+    });
 
-  const links = document.querySelectorAll('a[href]');
-
-  links.forEach(link => {
-    // Only apply transition to internal links
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.href.includes('#') &&
+        !link.href.startsWith('mailto:') &&
+        !link.target
+      ) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
           setTimeout(() => {
-            window.location = href;
-          }, 300); // Match this with CSS transition time
-        }
-      });
-    }
-  });
-</script>
-
+            window.location = link.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
