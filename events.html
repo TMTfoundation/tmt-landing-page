@@ -1,19 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <style>
-  body.fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  body.fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease;
-  }
-</style>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Events | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -22,6 +11,12 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     header {
@@ -31,8 +26,8 @@
       padding: 1rem 0 0.5rem;
     }
 
-    header img {
-      width: 60px;
+    header a img {
+      width: 150px;
       height: auto;
     }
 
@@ -50,7 +45,7 @@
     nav.main-nav {
       display: flex;
       justify-content: center;
-      background-color: #e0e7ff; /* complementary modern color */
+      background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
       flex-wrap: wrap;
     }
@@ -75,8 +70,19 @@
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .event-description {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: justify;
     }
 
     footer {
@@ -90,15 +96,16 @@
 </head>
 <body>
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="TMT Foundation Logo" style="width: 150px; height: auto;" />
-  </a>
-  <h1>The Triton Mock Trial Foundation</h1>
-  <p>Supporting Mock Trial at UCSD</p>
-</header>
+    <a href="index.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
+  </header>
 
   <nav class="main-nav">
-    <a href="index.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="calendar.html">Calendar</a>
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
@@ -114,40 +121,41 @@
 
   <main>
     <h2>Events</h2>
-    <p>Throughout the year, the TMT Foundation organizes alumni gatherings, fundraising events, and networking opportunities to support and celebrate the students of Mock Trial at UCSD.</p>
-    <p>More details on upcoming events will be posted here soon.</p>
+    <div class="event-description">
+      <p>
+        Throughout the year, the TMT Foundation organizes alumni gatherings, fundraising events, and networking opportunities to support and celebrate the UCSD Mock Trial community.
+      </p>
+      <p>
+        We are proud to host annual events such as the Alumni Happy Hour, Fall Invitational Welcome Reception, and the Spring End-of-Year Celebration. Stay tuned for updates and join us in celebrating advocacy, community, and legacy.
+      </p>
+    </div>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = 0;
-  requestAnimationFrame(() => {
-    document.body.classList.add('fade-in');
-  });
-});
 
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+    });
 
-  const links = document.querySelectorAll('a[href]');
-
-  links.forEach(link => {
-    // Only apply transition to internal links
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.href.includes('#') &&
+        !link.href.startsWith('mailto:') &&
+        !link.target
+      ) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
           setTimeout(() => {
-            window.location = href;
-          }, 300); // Match this with CSS transition time
-        }
-      });
-    }
-  });
-</script>
+            window.location = link.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
