@@ -2,12 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate | TMT Foundation</title>
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
   <style>
     :root {
       --ucsd-blue: #002855;
@@ -19,66 +16,62 @@
       font-family: 'Inter', sans-serif;
       background-color: #f8f9fa;
       color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
       background-color: var(--ucsd-blue);
       color: white;
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 2rem 1rem 1.5rem;
     }
 
     header img {
-      max-width: 100px;
+      width: 80px;
       margin-bottom: 1rem;
     }
 
     header h1 {
-      font-size: 2rem;
-      margin: 0.5rem 0;
+      margin: 0;
+      font-size: 1.75rem;
     }
 
-    .tagline {
-      font-size: 1.2rem;
-      margin: 0;
+    header p {
       font-style: italic;
+      margin-top: 0.5rem;
     }
 
     main {
-      padding: 2rem 1rem;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
+      flex: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
       text-align: center;
     }
 
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
+    .donorbox-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem auto;
     }
 
-    .donorbox-wrapper iframe {
+    iframe {
       width: 100%;
       max-width: 500px;
-      height: 900px;
       border: none;
-      margin: 0 auto;
-      display: block;
     }
 
     .button {
-      display: inline-block;
       background-color: var(--ucsd-gold);
       color: black;
       padding: 0.75rem 1.5rem;
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
-      cursor: pointer;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+      display: inline-block;
     }
 
     .button:hover {
@@ -89,8 +82,8 @@
       background-color: var(--ucsd-blue);
       color: white;
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+      padding: 1rem;
+      font-size: 0.875rem;
     }
   </style>
 </head>
@@ -99,34 +92,32 @@
   <header>
     <img src="logo.png" alt="TMT Foundation Logo" />
     <h1>The Triton Mock Trial Foundation</h1>
-    <p class="tagline">Supporting Mock Trial at UCSD</p>
+    <p>Supporting Mock Trial at UCSD</p>
   </header>
 
   <main>
-    <div class="container">
-      <p>
-        Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
-      </p>
+    <p>
+      Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
+    </p>
 
-      <div class="donorbox-wrapper">
-        <iframe
-          src="https://donorbox.org/embed/fall-quarter-invitationals"
-          name="donorbox"
-          allowpaymentrequest="true"
-          scrolling="no"
-          seamless="seamless"
-          allow="payment">
-        </iframe>
-      </div>
-
-      <a href="index.html" class="button">Back to Home</a>
+    <div class="donorbox-wrapper">
+      <iframe
+        src="https://donorbox.org/embed/fall-quarter-invitationals"
+        name="donorbox"
+        allowpaymentrequest="true"
+        scrolling="no"
+        seamless="seamless"
+        height="900"
+        allow="payment">
+      </iframe>
     </div>
+
+    <a href="index.html" class="button">Back to Home</a>
   </main>
 
   <footer>
     &copy; 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
 
-  <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
 </body>
 </html>
