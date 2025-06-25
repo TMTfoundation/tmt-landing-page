@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Triton Mock Trial Foundation</title>
+  <title>Home | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -75,8 +75,8 @@
     }
 
     main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
     }
 
     .content p {
@@ -104,7 +104,8 @@
   </header>
 
   <nav class="main-nav">
-    <a href="index.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="calendar.html">Calendar</a>
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
@@ -119,15 +120,13 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>Our Mission</h2>
-      <p>
-        The Triton Mock Trial Foundation is dedicated to supporting the nationally competitive UC San Diego Mock Trial program. We aim to create long-term sustainability through alumni engagement, donor support, and tournament hosting.
-      </p>
-      <p>
-        Your involvement ensures that Triton Mock Trial continues to thrive—bringing courtroom experience, critical thinking, and confidence to future generations of advocates.
-      </p>
-    </section>
+    <h2>Welcome to the TMT Foundation</h2>
+    <p>
+      The Triton Mock Trial Foundation supports UC San Diego Mock Trial through fundraising, alumni engagement, and educational initiatives. We are a nonprofit organization dedicated to empowering students through the transformative experience of trial advocacy.
+    </p>
+    <p>
+      Explore our site to learn how you can get involved, support our mission, and stay connected with the Triton Mock Trial community.
+    </p>
   </main>
 
   <footer>
@@ -135,12 +134,10 @@
   </footer>
 
   <script>
-    // Apply fade-in when page loads
     window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.add('fade-in');
     });
 
-    // Smooth fade-out on internal navigation
     document.querySelectorAll('a[href]').forEach(link => {
       if (
         link.hostname === window.location.hostname &&
