@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@fullcalendar/core@6.1.8/main.min.css" rel="stylesheet" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -27,7 +28,7 @@
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 1.8rem;
+      font-size: 2rem;
     }
 
     header p {
@@ -37,32 +38,45 @@
     }
 
     nav.main-nav {
-      background-color: #e0e7ff;
+      background-color: #e6ebff;
       border-bottom: 1px solid #ccc;
-      display: flex;
-      justify-content: center;
     }
 
-    .nav-wrapper {
+    .main-nav .nav-container {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       max-width: 1200px;
-      width: 100%;
+      margin: 0 auto;
       padding: 0.5rem 1rem;
+      flex-wrap: wrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
+      justify-content: center;
+      flex-grow: 1;
     }
 
-    .nav-search input {
-      padding: 0.4rem 0.6rem;
+    .nav-links a {
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem;
+    }
+
+    .nav-links a:hover {
+      background-color: #d6dfff;
+      border-radius: 4px;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.9rem;
       border: 1px solid #ccc;
       border-radius: 4px;
-      font-family: 'Inter', sans-serif;
     }
 
     nav.sub-nav {
@@ -70,21 +84,18 @@
       justify-content: center;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
-      padding: 0.5rem 0;
-      gap: 2rem;
       flex-wrap: wrap;
     }
 
-    nav a {
+    nav.sub-nav a {
+      padding: 0.75rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav a:hover {
+    nav.sub-nav a:hover {
       background-color: #d6dfff;
-      padding: 0.5rem;
-      border-radius: 4px;
     }
 
     main {
@@ -103,13 +114,15 @@
 </head>
 <body>
   <header>
-    <a href="about.html"><img src="logo.png" alt="TMT Foundation Logo" /></a>
+    <a href="about.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
     <h1>The Triton Mock Trial Foundation</h1>
     <p>Supporting Mock Trial at UCSD</p>
   </header>
 
   <nav class="main-nav">
-    <div class="nav-wrapper">
+    <div class="nav-container">
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -118,7 +131,7 @@
         <a href="donate.html">Donate</a>
         <a href="contact.html">Contact</a>
       </div>
-      <div class="nav-search">
+      <div class="search-bar">
         <input type="text" placeholder="Search..." />
       </div>
     </div>
