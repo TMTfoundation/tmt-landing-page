@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Donate | TMT Foundation</title>
   <style>
@@ -28,13 +29,21 @@
       max-width: 700px;
       margin: 2rem auto;
       padding: 0 1rem;
+      text-align: center;
     }
 
     h1 {
       color: var(--ucsd-blue);
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
 
-    a.button {
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .button {
       display: inline-block;
       margin-top: 1.5rem;
       background-color: var(--ucsd-gold);
@@ -43,14 +52,11 @@
       text-decoration: none;
       font-weight: bold;
       border-radius: 5px;
+      cursor: pointer;
     }
 
-    a.button:hover {
+    .button:hover {
       background-color: #e6b800;
-    }
-
-    p {
-      font-size: 1.1rem;
     }
   </style>
 </head>
@@ -61,16 +67,33 @@
   </header>
 
   <main>
-    <p>Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.</p>
-    <p>Online donation processing will be available soon. For now, please email us directly if you’re interested in contributing.</p>
-    <p>Email: <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a></p>
+    <p>
+      Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
+    </p>
+    <p>
+      Click the button below to make a secure donation through Donorbox.
+    </p>
 
-    <a href="index.html" class="button">Back to Home</a>
+    <div class="button" onclick="openDonorbox()">Make a Donation</div>
+
+    <a href="index.html" class="button" style="margin-top: 1rem;">Back to Home</a>
   </main>
 
   <footer>
     &copy; 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
+
+  <script src="https://donorbox.org/widget.js" paypalExpress="false"></script> <iframe src="https://donorbox.org/embed/fall-quarter-invitationals?" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 500px; min-width: 250px; max-height:none!important" allow="payment"></iframe>
+  <script src="https://donorbox.org/widget.js" paypalExpress="false"></script>
+  <script>
+    function openDonorbox() {
+      Donorbox.popupOpen({
+        url: "https://donorbox.org/your-campaign-name",  // <-- replace this URL!
+        iframe: true
+      });
+      return false;
+    }
+  </script>
 
 </body>
 </html>
