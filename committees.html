@@ -142,7 +142,13 @@
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
 <script>
-  document.body.classList.add('fade-in');
+  document.addEventListener('DOMContentLoaded', () => {
+  document.body.style.opacity = 0;
+  requestAnimationFrame(() => {
+    document.body.classList.add('fade-in');
+  });
+});
+
 
   const links = document.querySelectorAll('a[href]');
 
