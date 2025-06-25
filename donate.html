@@ -1,113 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Triton Mock Trial Foundation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <title>Donate | TMT Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --ucsd-blue: #002855;
+      --ucsd-gold: #ffcd00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #f5f5f5;
-      color: #002855;
+      background-color: #f8f9fa;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
     header {
-      background-color: #002855;
+      background-color: var(--ucsd-blue);
       color: white;
-      padding: 40px 20px 20px;
       text-align: center;
+      padding: 2rem 1rem 1.5rem;
     }
 
-    .header-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+    header img {
+      width: 80px;
+      margin-bottom: 1rem;
     }
 
-    .header-content img {
-      height: 80px;
-      margin-bottom: 10px;
-    }
-
-    .header-content h1 {
-      font-size: 1.8em;
+    header h1 {
       margin: 0;
+      font-size: 1.75rem;
     }
 
-    .subtitle {
+    header p {
       font-style: italic;
-      margin: 5px 0 0;
+      margin-top: 0.5rem;
     }
 
     main {
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: justify;
-    }
-
-    .mission {
+      flex: 1;
       max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
     }
 
-    .buttons {
-      margin-top: 20px;
+    .donorbox-wrapper {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
     }
 
-    .buttons a {
-      background-color: #ffc900;
-      color: #002855;
+    iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 900px;
+      border: none;
+      overflow: hidden;
+    }
+
+    .button {
+      background-color: var(--ucsd-gold);
+      color: black;
+      padding: 0.75rem 1.5rem;
       text-decoration: none;
-      padding: 12px 20px;
-      margin: 0 10px;
-      border-radius: 6px;
       font-weight: bold;
+      border-radius: 5px;
       display: inline-block;
+      margin-top: 1rem;
+    }
+
+    .button:hover {
+      background-color: #e6b800;
     }
 
     footer {
-      background-color: #002855;
+      background-color: var(--ucsd-blue);
       color: white;
       text-align: center;
-      padding: 20px;
-      font-size: 0.9em;
+      padding: 1rem;
+      font-size: 0.875rem;
     }
   </style>
 </head>
-
 <body>
+
   <header>
-    <div class="header-content">
-      <img src="logo.png" alt="TMT Logo" />
-      <h1>The Triton Mock Trial Foundation</h1>
-      <p class="subtitle">Supporting Mock Trial at UCSD</p>
-    </div>
+    <img src="logo.png" alt="TMT Foundation Logo" />
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
   </header>
 
   <main>
-    <section class="mission">
-      <h2 style="text-align:center">Our Mission</h2>
-      <p>
-        The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial
-        at the University of California, San Diego. We fundraise, provide mentorship, and build community to ensure the
-        next generation of advocates thrives.
-      </p>
-      <div class="buttons" style="text-align:center">
-        <a href="contact.html">Contact Us</a>
-        <a href="donate.html">Donate</a>
-      </div>
-    </section>
+    <p>
+      Every gift helps empower the next generation of advocates. Your support funds tournament travel, training, and access for all UCSD mock trial students.
+    </p>
+
+    <div class="donorbox-wrapper">
+      <iframe
+        src="https://donorbox.org/embed/fall-quarter-invitationals"
+        name="donorbox"
+        allowpaymentrequest="true"
+        seamless="seamless"
+        scrolling="no"
+        allow="payment">
+      </iframe>
+    </div>
+
+    <a href="index.html" class="button">Back to Home</a>
   </main>
 
   <footer>
     &copy; 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-</body>
 
+</body>
 </html>
