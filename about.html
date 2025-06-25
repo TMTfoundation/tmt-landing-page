@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -11,29 +11,23 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    body.fade-in {
-      opacity: 1;
     }
 
     header {
       background-color: #002855;
       color: white;
       text-align: center;
-      padding: 1rem 0 0.5rem;
+      padding: 2rem 1rem 1rem;
     }
 
-    header a img {
+    header img {
       width: 150px;
       height: auto;
     }
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
 
     header p {
@@ -43,73 +37,56 @@
     }
 
     nav.main-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      padding: 0.5rem;
+      display: flex;
+      justify-content: center;
     }
 
-    nav.main-nav a {
-      padding: 0.5rem 1rem;
-      color: #002855;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav.main-nav a:hover {
-      background-color: #d6dfff;
+    .nav-wrapper {
+      display: flex;
+      gap: 2rem;
+      padding: 0.75rem 0;
+      flex-wrap: wrap;
     }
 
     nav.sub-nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
     }
 
+    nav.main-nav a,
     nav.sub-nav a {
-      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
+    nav.main-nav a:hover,
     nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
+      padding: 0.75rem 1rem;
+      border-radius: 5px;
     }
 
-    .search-bar {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
+    .search-container {
+      position: absolute;
+      right: 1rem;
+      top: 1.75rem;
+    }
+
+    .search-container input {
       padding: 0.5rem;
-    }
-
-    .search-bar input {
-      padding: 0.4rem 0.6rem;
-      font-size: 0.9rem;
-      border: 1px solid #ccc;
       border-radius: 4px;
+      border: 1px solid #ccc;
     }
 
     main {
-      padding: 2rem 1rem;
+      padding: 2rem;
       text-align: center;
-    }
-
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .about-text {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: justify;
     }
 
     footer {
@@ -119,43 +96,23 @@
       padding: 1rem;
       font-size: 0.875rem;
     }
-
-    @media (max-width: 768px) {
-      nav.main-nav, nav.sub-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .search-bar {
-        margin: 0.5rem 0 0 0;
-        width: 100%;
-        justify-content: center;
-      }
-
-      .search-bar input {
-        width: 80%;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html">
-      <img src="logo.png" alt="TMT Foundation Logo" />
-    </a>
+    <a href="about.html"><img src="logo.png" alt="TMT Foundation Logo" /></a>
     <h1>The Triton Mock Trial Foundation</h1>
     <p>Supporting Mock Trial at UCSD</p>
   </header>
 
   <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="join.html">Join</a>
-    <a href="donate.html">Donate</a>
-    <a href="contact.html">Contact</a>
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+    <div class="nav-wrapper">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="calendar.html">Calendar</a>
+      <a href="join.html">Join</a>
+      <a href="donate.html">Donate</a>
+      <a href="contact.html">Contact</a>
     </div>
   </nav>
 
@@ -168,41 +125,12 @@
 
   <main>
     <h2>About the Foundation</h2>
-    <div class="about-text">
-      <p>
-        The Triton Mock Trial Foundation was established to provide long-term support for the UC San Diego Mock Trial program. Our mission is to connect alumni, raise funds for travel and training, and ensure that every student—regardless of background—has access to the transformative experience of mock trial.
-      </p>
-      <p>
-        Through our events, mentorship efforts, and fundraising campaigns, the Foundation aims to strengthen the mock trial community at UCSD and create opportunities for current and future students to thrive.
-      </p>
-    </div>
+    <p>The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial at the University of California, San Diego.</p>
+    <p>We fundraise, provide mentorship, and build community to ensure the next generation of advocates thrives.</p>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      document.body.classList.add('fade-in');
-    });
-
-    document.querySelectorAll('a[href]').forEach(link => {
-      if (
-        link.hostname === window.location.hostname &&
-        !link.href.includes('#') &&
-        !link.href.startsWith('mailto:') &&
-        !link.target
-      ) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.body.classList.remove('fade-in');
-          setTimeout(() => {
-            window.location = link.href;
-          }, 300);
-        });
-      }
-    });
-  </script>
 </body>
 </html>
