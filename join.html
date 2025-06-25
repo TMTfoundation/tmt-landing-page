@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -74,12 +101,7 @@
       text-align: center;
     }
 
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .join-text {
+    .content {
       max-width: 700px;
       margin: 0 auto;
       text-align: justify;
@@ -91,6 +113,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +149,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -120,14 +162,10 @@
   </nav>
 
   <main>
-    <h2>Join the Foundation</h2>
-    <div class="join-text">
-      <p>
-        The Triton Mock Trial Foundation welcomes alumni, family members, and community supporters to get involved. Whether you’re a former competitor, a legal professional, or someone passionate about empowering students, there’s a place for you in our community.
-      </p>
-      <p>
-        Opportunities to join include volunteering as a coach or judge, supporting event planning, mentoring students, and more. Reach out through our contact page to learn how you can help grow the next generation of advocates.
-      </p>
+    <h2>Join the TMT Foundation</h2>
+    <div class="content">
+      <p>Whether you’re an alum, parent, or community supporter, we welcome your involvement. Joining the Triton Mock Trial Foundation is a powerful way to support student excellence at UC San Diego. Members receive updates, event invitations, and the opportunity to shape the future of the program.</p>
+      <p>To get involved, please reach out via our <a href="contact.html">Contact page</a> or visit our <a href="donate.html">Donate page</a> to begin making a difference today.</p>
     </div>
   </main>
 
