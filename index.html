@@ -1,123 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TMT Foundation - Home</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triton Mock Trial Foundation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #f5f5f5;
-      color: #001f4d;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+      color: #002855;
     }
 
     header {
       background-color: #002855;
       color: white;
-      text-align: center;
       padding: 40px 20px 20px;
+      text-align: center;
     }
 
-    header img {
+    .header-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-content img {
       height: 80px;
       margin-bottom: 10px;
     }
 
-    header h1 {
+    .header-content h1 {
       font-size: 1.8em;
       margin: 0;
     }
 
-    header p {
+    .subtitle {
       font-style: italic;
       margin: 5px 0 0;
     }
 
     main {
-      flex: 1;
       padding: 40px 20px;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1.6em;
-      margin-bottom: 20px;
-    }
-
-    p {
-      max-width: 700px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
       text-align: justify;
     }
 
-    .button-group {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .mission {
+      max-width: 700px;
     }
 
-    .button {
-      background-color: #ffcc00;
-      color: #001f4d;
-      border: none;
-      padding: 12px 24px;
+    .buttons {
+      margin-top: 20px;
+    }
+
+    .buttons a {
+      background-color: #ffc900;
+      color: #002855;
       text-decoration: none;
-      font-weight: bold;
+      padding: 12px 20px;
+      margin: 0 10px;
       border-radius: 6px;
-      transition: background-color 0.3s;
-    }
-
-    .button:hover {
-      background-color: #e6b800;
+      font-weight: bold;
+      display: inline-block;
     }
 
     footer {
       background-color: #002855;
       color: white;
       text-align: center;
-      padding: 15px 10px;
+      padding: 20px;
       font-size: 0.9em;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.4em;
-      }
-
-      .button {
-        width: 100%;
-        max-width: 240px;
-      }
     }
   </style>
 </head>
+
 <body>
   <header>
-    <img src="logo.png" alt="TMT Logo" />
-    <h1>The Triton Mock Trial Foundation</h1>
-    <p>Supporting Mock Trial at UCSD</p>
+    <div class="header-content">
+      <img src="logo.png" alt="TMT Logo" />
+      <h1>The Triton Mock Trial Foundation</h1>
+      <p class="subtitle">Supporting Mock Trial at UCSD</p>
+    </div>
   </header>
 
   <main>
-    <h2>Our Mission</h2>
-    <p>
-      The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial at the University of California, San Diego. We fundraise, provide mentorship, and build community to ensure the next generation of advocates thrives.
-    </p>
-    <div class="button-group">
-      <a href="contact.html" class="button">Contact Us</a>
-      <a href="donate.html" class="button">Donate</a>
-    </div>
+    <section class="mission">
+      <h2 style="text-align:center">Our Mission</h2>
+      <p>
+        The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial
+        at the University of California, San Diego. We fundraise, provide mentorship, and build community to ensure the
+        next generation of advocates thrives.
+      </p>
+      <div class="buttons" style="text-align:center">
+        <a href="contact.html">Contact Us</a>
+        <a href="donate.html">Donate</a>
+      </div>
+    </section>
   </main>
 
   <footer>
-    © 2025 Triton Mock Trial Foundation. All rights reserved.
+    &copy; 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
 </body>
+
 </html>
