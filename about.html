@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -79,9 +106,9 @@
       margin-bottom: 1.2rem;
     }
 
-    .content p {
+    .about-text {
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-align: justify;
     }
 
@@ -91,6 +118,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +154,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -120,18 +167,15 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>About the TMT Foundation</h2>
+    <h2>About the Foundation</h2>
+    <div class="about-text">
       <p>
-        The Triton Mock Trial Foundation was created to support the nationally ranked UC San Diego Mock Trial program. Founded by alumni and supported by the community, we work to ensure long-term sustainability for the program through financial support, alumni mentorship, and community engagement.
+        The Triton Mock Trial Foundation was established to provide long-term support for the UC San Diego Mock Trial program. Our mission is to connect alumni, raise funds for travel and training, and ensure that every student—regardless of background—has access to the transformative experience of mock trial.
       </p>
       <p>
-        Our foundation provides funding for tournament travel, coaching, and competitive preparation. We also organize events and initiatives that keep alumni involved and students inspired.
+        Through our events, mentorship efforts, and fundraising campaigns, the Foundation aims to strengthen the mock trial community at UCSD and create opportunities for current and future students to thrive.
       </p>
-      <p>
-        Whether you’re an alum, parent, or supporter of the legal advocacy community, we welcome your involvement and thank you for your commitment to future generations of student advocates.
-      </p>
-    </section>
+    </div>
   </main>
 
   <footer>
@@ -139,7 +183,7 @@
   </footer>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('fade-in');
     });
 
