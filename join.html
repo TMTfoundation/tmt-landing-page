@@ -128,5 +128,27 @@
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
+<script>
+  document.body.classList.add('fade-in');
+
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach(link => {
+    // Only apply transition to internal links
+    if (link.hostname === window.location.hostname) {
+      link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location = href;
+          }, 300); // Match this with CSS transition time
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
