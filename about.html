@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <style>
+  body.fade-out {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  body.fade-in {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+</style>
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
@@ -127,5 +138,27 @@
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
+<script>
+  document.body.classList.add('fade-in');
+
+  const links = document.querySelectorAll('a[href]');
+
+  links.forEach(link => {
+    // Only apply transition to internal links
+    if (link.hostname === window.location.hostname) {
+      link.addEventListener('click', function (e) {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+          e.preventDefault();
+          document.body.classList.remove('fade-in');
+          document.body.classList.add('fade-out');
+          setTimeout(() => {
+            window.location = href;
+          }, 300); // Match this with CSS transition time
+        }
+      });
+    }
+  });
+</script>
 </body>
 </html>
