@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Membership | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff;
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,12 +60,23 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
+    }
+
+    main h2 {
+      font-size: 1.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      max-width: 700px;
+      margin: 0 auto 1rem;
+      text-align: justify;
     }
 
     footer {
@@ -92,9 +111,18 @@
   </nav>
 
   <main>
-    <h2>Become a Member</h2>
-    <p>We are developing a membership program for alumni, parents, and community supporters who want to stay engaged with Triton Mock Trial. Members will receive updates, event invitations, and exclusive opportunities to support the team’s success.</p>
-    <p>Check back soon for details on membership tiers and benefits.</p>
+    <section class="content">
+      <h2>Membership</h2>
+      <p>
+        Members of the Triton Mock Trial Foundation are a vital part of our growing alumni and supporter network. Whether you're a former competitor, coach, or parent, your involvement strengthens the future of UCSD Mock Trial.
+      </p>
+      <p>
+        Benefits of membership include newsletters, alumni networking opportunities, early invites to events, and the chance to mentor or support current students. There are no dues—just a shared commitment to advocacy, excellence, and access.
+      </p>
+      <p>
+        To join, visit the <a href="join.html">Join</a> page or email us at <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>.
+      </p>
+    </section>
   </main>
 
   <footer>
