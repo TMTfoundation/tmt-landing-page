@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Membership | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
@@ -11,29 +11,23 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    body.fade-in {
-      opacity: 1;
     }
 
     header {
       background-color: #002855;
       color: white;
       text-align: center;
-      padding: 1rem 0 0.5rem;
+      padding: 2rem 1rem 1rem;
     }
 
-    header a img {
+    header img {
       width: 150px;
       height: auto;
     }
 
     header h1 {
       margin: 0.5rem 0 0;
-      font-size: 1.5rem;
+      font-size: 2rem;
     }
 
     header p {
@@ -43,68 +37,76 @@
     }
 
     nav.main-nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      background-color: #e0e7ff;
+      background-color: #e6ebff;
       border-bottom: 1px solid #ccc;
-      padding: 0.5rem;
     }
 
-    nav.main-nav a {
+    .main-nav .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
       padding: 0.5rem 1rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex-grow: 1;
+    }
+
+    .nav-links a {
       color: #002855;
       text-decoration: none;
       font-weight: 500;
+      padding: 0.5rem;
     }
 
-    nav.main-nav a:hover {
+    .nav-links a:hover {
       background-color: #d6dfff;
+      border-radius: 4px;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     nav.sub-nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
       background-color: #ffffff;
       border-bottom: 1px solid #ddd;
+      flex-wrap: wrap;
     }
 
     nav.sub-nav a {
-      padding: 0.5rem 1rem;
+      padding: 0.75rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
     nav.sub-nav a:hover {
-      background-color: #f0f0f0;
-    }
-
-    .search-bar {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
-      padding: 0.5rem;
-    }
-
-    .search-bar input {
-      padding: 0.4rem 0.6rem;
-      font-size: 0.9rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      background-color: #d6dfff;
     }
 
     main {
-      padding: 2rem 1rem;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
     }
 
-    .content {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: justify;
+    main p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -114,28 +116,11 @@
       padding: 1rem;
       font-size: 0.875rem;
     }
-
-    @media (max-width: 768px) {
-      nav.main-nav, nav.sub-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .search-bar {
-        margin: 0.5rem 0 0 0;
-        width: 100%;
-        justify-content: center;
-      }
-
-      .search-bar input {
-        width: 80%;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
-    <a href="index.html">
+    <a href="about.html">
       <img src="logo.png" alt="TMT Foundation Logo" />
     </a>
     <h1>The Triton Mock Trial Foundation</h1>
@@ -143,14 +128,18 @@
   </header>
 
   <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="join.html">Join</a>
-    <a href="donate.html">Donate</a>
-    <a href="contact.html">Contact</a>
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+    <div class="nav-container">
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="calendar.html">Calendar</a>
+        <a href="join.html">Join</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
     </div>
   </nav>
 
@@ -163,41 +152,19 @@
 
   <main>
     <h2>Membership</h2>
-    <div class="content">
-      <p>
-        Becoming a member of the TMT Foundation means supporting advocacy, mentorship, and opportunity at UCSD. Membership is open to alumni, friends, and supporters of the program who want to stay engaged and give back.
-      </p>
-      <p>
-        Members help shape the foundation's mission and direction, vote on leadership, and receive insider updates and recognition. To learn more or express interest, please reach out via our <a href="contact.html">contact form</a>.
-      </p>
-    </div>
+    <p>
+      Becoming a member of the Triton Mock Trial Foundation connects you to a community of alumni, legal professionals, and advocates who support the growth of UCSD Mock Trial.
+    </p>
+    <p>
+      Members receive updates, invitations to exclusive events, and opportunities to engage with the next generation of competitors.
+    </p>
+    <p>
+      Membership is open to all supporters. Join us in advancing advocacy education at UCSD.
+    </p>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-
-  <script>
-    window.addEventListener('DOMContentLoaded', function () {
-      document.body.classList.add('fade-in');
-    });
-
-    document.querySelectorAll('a[href]').forEach(link => {
-      if (
-        link.hostname === window.location.hostname &&
-        !link.href.includes('#') &&
-        !link.href.startsWith('mailto:') &&
-        !link.target
-      ) {
-        link.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.body.classList.remove('fade-in');
-          setTimeout(() => {
-            window.location = link.href;
-          }, 300);
-        });
-      }
-    });
-  </script>
 </body>
 </html>
