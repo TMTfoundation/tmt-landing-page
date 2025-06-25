@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Triton Mock Trial Foundation</title>
+  <title>About | Triton Mock Trial Foundation</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
   <style>
     body {
@@ -11,6 +11,12 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     header {
@@ -20,8 +26,8 @@
       padding: 1rem 0 0.5rem;
     }
 
-    header img {
-      width: 60px;
+    header a img {
+      width: 150px;
       height: auto;
     }
 
@@ -64,7 +70,7 @@
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
@@ -79,26 +85,6 @@
       text-align: justify;
     }
 
-    .button-group {
-      margin-top: 30px;
-    }
-
-    .button {
-      background-color: #ffc800;
-      color: #002855;
-      font-weight: bold;
-      padding: 12px 20px;
-      margin: 0 10px;
-      border: none;
-      border-radius: 6px;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .button:hover {
-      background-color: #e6b800;
-    }
-
     footer {
       background-color: #002855;
       color: white;
@@ -107,26 +93,15 @@
       font-size: 0.875rem;
     }
   </style>
-  <style>
-  body.fade-out {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-  }
-
-  body.fade-in {
-    opacity: 1;
-    transition: opacity 0.4s ease;
-  }
-</style>
 </head>
 <body>
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="TMT Foundation Logo" style="width: 150px; height: auto;" />
-  </a>
-  <h1>The Triton Mock Trial Foundation</h1>
-  <p>Supporting Mock Trial at UCSD</p>
-</header>
+    <a href="index.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
+  </header>
 
   <nav class="main-nav">
     <a href="index.html">About</a>
@@ -147,45 +122,41 @@
     <section class="content">
       <h2>Our Mission</h2>
       <p>
-        The Triton Mock Trial Foundation exists to support the success, growth, and long-term sustainability of mock trial at the University of California, San Diego. We fundraise, provide mentorship, and build community to ensure the next generation of advocates thrives.
+        The Triton Mock Trial Foundation is dedicated to supporting the nationally competitive UC San Diego Mock Trial program. We aim to create long-term sustainability through alumni engagement, donor support, and tournament hosting.
       </p>
-      <div class="button-group">
-        <a href="contact.html" class="button">Contact Us</a>
-        <a href="donate.html" class="button">Donate</a>
-      </div>
+      <p>
+        Your involvement ensures that Triton Mock Trial continues to thrive—bringing courtroom experience, critical thinking, and confidence to future generations of advocates.
+      </p>
     </section>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = 0;
-  requestAnimationFrame(() => {
-    document.body.classList.add('fade-in');
-  });
-});
 
+  <script>
+    // Apply fade-in when page loads
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
 
-  const links = document.querySelectorAll('a[href]');
-
-  links.forEach(link => {
-    // Only apply transition to internal links
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+    // Smooth fade-out on internal navigation
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.href.includes('#') &&
+        !link.href.startsWith('mailto:') &&
+        !link.target
+      ) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
           setTimeout(() => {
-            window.location = href;
-          }, 300); // Match this with CSS transition time
-        }
-      });
-    }
-  });
-</script>
+            window.location = link.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
