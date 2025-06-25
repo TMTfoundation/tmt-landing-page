@@ -84,16 +84,21 @@
 
     main {
       padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
       text-align: center;
     }
 
-    .email {
-      font-weight: bold;
-      text-decoration: underline;
-      text-transform: uppercase;
-      display: inline-block;
-      margin-top: 1rem;
+    .email-link {
+      margin-top: 2rem;
       font-size: 1.2rem;
+      font-weight: bold;
+      text-transform: lowercase;
+    }
+
+    .email-link a {
+      color: #002855;
+      text-decoration: underline;
     }
 
     footer {
@@ -122,6 +127,10 @@
       nav.sub-nav {
         flex-direction: column;
         align-items: center;
+      }
+
+      main {
+        padding: 1rem;
       }
     }
   </style>
@@ -154,8 +163,13 @@
 
   <main>
     <h2>Contact Us</h2>
-    <p>If you have questions about the Foundation or would like to get involved, please reach out:</p>
-    <a href="mailto:info@tmtfoundation.org" class="email">info@tmtfoundation.org</a>
+    <p>
+      For any questions, alumni inquiries, or media requests, feel free to reach out to us directly.
+    </p>
+
+    <div class="email-link">
+      <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>
+    </div>
   </main>
 
   <footer>
