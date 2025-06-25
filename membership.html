@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -74,12 +101,7 @@
       text-align: center;
     }
 
-    main h2 {
-      font-size: 1.75rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .membership-text {
+    .content {
       max-width: 700px;
       margin: 0 auto;
       text-align: justify;
@@ -91,6 +113,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +149,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -121,12 +163,12 @@
 
   <main>
     <h2>Membership</h2>
-    <div class="membership-text">
+    <div class="content">
       <p>
-        Membership in the Triton Mock Trial Foundation is open to all supporters who believe in the value of undergraduate mock trial. Members receive quarterly updates, invitations to alumni events, and opportunities to connect with students and fellow alumni.
+        Becoming a member of the TMT Foundation means supporting advocacy, mentorship, and opportunity at UCSD. Membership is open to alumni, friends, and supporters of the program who want to stay engaged and give back.
       </p>
       <p>
-        Joining the Foundation is a meaningful way to stay involved and shape the future of UCSD Mock Trial. Whether you’re a recent graduate or a long-time supporter, we welcome you.
+        Members help shape the foundation's mission and direction, vote on leadership, and receive insider updates and recognition. To learn more or express interest, please reach out via our <a href="contact.html">contact form</a>.
       </p>
     </div>
   </main>
