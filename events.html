@@ -36,7 +36,15 @@
       font-size: 1rem;
     }
 
-    nav.main-nav, nav.sub-nav {
+    nav.main-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #e0e7ff; /* complementary modern color */
+      border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
+    }
+
+    nav.sub-nav {
       display: flex;
       justify-content: center;
       background-color: #ffffff;
@@ -52,7 +60,7 @@
     }
 
     nav.main-nav a:hover, nav.sub-nav a:hover {
-      background-color: #f0f0f0;
+      background-color: #d6dfff;
     }
 
     main {
