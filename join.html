@@ -11,6 +11,12 @@
       margin: 0;
       background-color: #f5f5f5;
       color: #002855;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
     }
 
     header {
@@ -20,8 +26,8 @@
       padding: 1rem 0 0.5rem;
     }
 
-    header img {
-      width: 60px;
+    header a img {
+      width: 150px;
       height: auto;
     }
 
@@ -64,18 +70,18 @@
     }
 
     main {
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     main h2 {
       font-size: 1.75rem;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
 
-    .content p {
+    .join-text {
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-align: justify;
     }
 
@@ -90,16 +96,16 @@
 </head>
 <body>
   <header>
-  <a href="index.html">
-    <img src="logo.png" alt="TMT Foundation Logo" style="width: 150px; height: auto;" />
-  </a>
-  <h1>The Triton Mock Trial Foundation</h1>
-  <p>Supporting Mock Trial at UCSD</p>
-</header>
-
+    <a href="index.html">
+      <img src="logo.png" alt="TMT Foundation Logo" />
+    </a>
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p>Supporting Mock Trial at UCSD</p>
+  </header>
 
   <nav class="main-nav">
-    <a href="index.html">About</a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
     <a href="calendar.html">Calendar</a>
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
@@ -114,47 +120,42 @@
   </nav>
 
   <main>
-    <section class="content">
-      <h2>Join Our Network</h2>
+    <h2>Join the Foundation</h2>
+    <div class="join-text">
       <p>
-        Whether you’re an alum, a parent, or a friend of the program, joining the TMT Foundation network is a great way to stay involved. By becoming a member, you’ll receive updates about UCSD Mock Trial, opportunities to mentor students, and invitations to special events.
+        The Triton Mock Trial Foundation welcomes alumni, family members, and community supporters to get involved. Whether you’re a former competitor, a legal professional, or someone passionate about empowering students, there’s a place for you in our community.
       </p>
       <p>
-        To join our mailing list or learn more, please contact us directly at <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a>.
+        Opportunities to join include volunteering as a coach or judge, supporting event planning, mentoring students, and more. Reach out through our contact page to learn how you can help grow the next generation of advocates.
       </p>
-    </section>
+    </div>
   </main>
 
   <footer>
     © 2025 Triton Mock Trial Foundation. All rights reserved.
   </footer>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  document.body.style.opacity = 0;
-  requestAnimationFrame(() => {
-    document.body.classList.add('fade-in');
-  });
-});
 
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      document.body.classList.add('fade-in');
+    });
 
-  const links = document.querySelectorAll('a[href]');
-
-  links.forEach(link => {
-    // Only apply transition to internal links
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener('click', function (e) {
-        const href = link.getAttribute('href');
-        if (!href.startsWith('#') && !href.startsWith('mailto:') && !link.target) {
+    document.querySelectorAll('a[href]').forEach(link => {
+      if (
+        link.hostname === window.location.hostname &&
+        !link.href.includes('#') &&
+        !link.href.startsWith('mailto:') &&
+        !link.target
+      ) {
+        link.addEventListener('click', function (e) {
           e.preventDefault();
           document.body.classList.remove('fade-in');
-          document.body.classList.add('fade-out');
           setTimeout(() => {
-            window.location = href;
-          }, 300); // Match this with CSS transition time
-        }
-      });
-    }
-  });
-</script>
+            window.location = link.href;
+          }, 300);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
