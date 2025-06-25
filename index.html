@@ -44,29 +44,56 @@
 
     nav.main-nav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      align-items: center;
       background-color: #e0e7ff;
       border-bottom: 1px solid #ccc;
-      flex-wrap: wrap;
+      padding: 0.5rem;
     }
 
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-    }
-
-    nav.main-nav a, nav.sub-nav a {
-      padding: 0.75rem 1rem;
+    nav.main-nav a {
+      padding: 0.5rem 1rem;
       color: #002855;
       text-decoration: none;
       font-weight: 500;
     }
 
-    nav.main-nav a:hover, nav.sub-nav a:hover {
+    nav.main-nav a:hover {
       background-color: #d6dfff;
+    }
+
+    nav.sub-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav.sub-nav a {
+      padding: 0.5rem 1rem;
+      color: #002855;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav.sub-nav a:hover {
+      background-color: #f0f0f0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      padding: 0.5rem;
+    }
+
+    .search-bar input {
+      padding: 0.4rem 0.6rem;
+      font-size: 0.9rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
 
     main {
@@ -75,13 +102,13 @@
     }
 
     main h2 {
-      font-size: 2rem;
+      font-size: 1.75rem;
       margin-bottom: 1.2rem;
     }
 
-    .content p {
+    .about-text {
       max-width: 700px;
-      margin: 0 auto 1rem;
+      margin: 0 auto;
       text-align: justify;
     }
 
@@ -91,6 +118,23 @@
       text-align: center;
       padding: 1rem;
       font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      nav.main-nav, nav.sub-nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .search-bar {
+        margin: 0.5rem 0 0 0;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .search-bar input {
+        width: 80%;
+      }
     }
   </style>
 </head>
@@ -110,6 +154,9 @@
     <a href="join.html">Join</a>
     <a href="donate.html">Donate</a>
     <a href="contact.html">Contact</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+    </div>
   </nav>
 
   <nav class="sub-nav">
@@ -120,13 +167,12 @@
   </nav>
 
   <main>
-    <h2>Welcome to the TMT Foundation</h2>
-    <p>
-      The Triton Mock Trial Foundation supports UC San Diego Mock Trial through fundraising, alumni engagement, and educational initiatives. We are a nonprofit organization dedicated to empowering students through the transformative experience of trial advocacy.
-    </p>
-    <p>
-      Explore our site to learn how you can get involved, support our mission, and stay connected with the Triton Mock Trial community.
-    </p>
+    <h2>Welcome to the Triton Mock Trial Foundation</h2>
+    <div class="about-text">
+      <p>
+        The Triton Mock Trial Foundation exists to support and empower the nationally competitive undergraduate mock trial program at the University of California, San Diego. Through mentorship, fundraising, and community engagement, we aim to build a bridge between UCSD Mock Trial students, alumni, and the broader legal and academic community.
+      </p>
+    </div>
   </main>
 
   <footer>
@@ -134,7 +180,7 @@
   </footer>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('DOMContentLoaded', function () {
       document.body.classList.add('fade-in');
     });
 
