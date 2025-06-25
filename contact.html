@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | TMT Foundation</title>
   <style>
@@ -17,26 +18,52 @@
       color: #222;
     }
 
-    header, footer {
+    header {
       background-color: var(--ucsd-blue);
       color: white;
+      padding: 2rem 1rem;
       text-align: center;
-      padding: 1.5rem;
+    }
+
+    header img {
+      max-width: 100px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin: 0;
+      font-style: italic;
     }
 
     main {
+      padding: 2rem 1rem;
+    }
+
+    .container {
       max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      margin: 0 auto;
+      text-align: center;
     }
 
-    h1 {
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    a {
       color: var(--ucsd-blue);
+      text-decoration: underline;
     }
 
-    a.button {
+    .button {
       display: inline-block;
-      margin-top: 1rem;
+      margin-top: 2rem;
       background-color: var(--ucsd-gold);
       color: black;
       padding: 0.75rem 1.5rem;
@@ -45,26 +72,33 @@
       border-radius: 5px;
     }
 
-    a.button:hover {
+    .button:hover {
       background-color: #e6b800;
     }
 
-    p {
-      font-size: 1.1rem;
+    footer {
+      background-color: var(--ucsd-blue);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Contact Us</h1>
+    <img src="logo.png" alt="TMT Foundation Logo" />
+    <h1>The Triton Mock Trial Foundation</h1>
+    <p class="tagline">Supporting Mock Trial at UCSD</p>
   </header>
 
   <main>
-    <p>We’d love to hear from you. Reach out with questions, partnership inquiries, or support opportunities.</p>
-    <p>Email: <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a></p>
-
-    <a href="index.html" class="button">Back to Home</a>
+    <div class="container">
+      <p>We’d love to hear from you. Reach out with questions, partnership inquiries, or support opportunities.</p>
+      <p>Email us at: <a href="mailto:info@tmtfoundation.org">info@tmtfoundation.org</a></p>
+      <a href="index.html" class="button">Back to Home</a>
+    </div>
   </main>
 
   <footer>
