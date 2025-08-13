@@ -2,165 +2,313 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home | Triton Mock Trial Foundation</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Triton Mock Trial Foundation</title>
+
+  <!-- Tailwind via CDN for rapid prototyping; swap to compiled Tailwind in production -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#022547', // matches logo
+              gold: '#DEAD28'  // matches logo
+            }
+          },
+          fontFamily: {
+            display: ['Poppins', 'ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto'],
+            body: ['Inter', 'ui-sans-serif', 'system-ui']
+          },
+          boxShadow: {
+            soft: '0 10px 25px rgba(0,0,0,0.07)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      background-color: #f5f5f5;
-      color: #002855;
-    }
-
-    header {
-      background-color: #002855;
-      color: white;
-      text-align: center;
-      padding: 1.5rem 0 1rem;
-      position: relative;
-    }
-
-    header img {
-      width: 150px;
-      height: auto;
-    }
-
-    header h1 {
-      margin: 0.5rem 0 0;
-      font-size: 1.75rem;
-    }
-
-    header p {
-      margin: 0;
-      font-style: italic;
-      font-size: 1rem;
-    }
-
-    .search-bar {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-    }
-
-    .search-bar input {
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid #ccc;
-      font-family: 'Inter', sans-serif;
-    }
-
-    nav.nav-links {
-      display: flex;
-      justify-content: center;
-      background-color: #e0e7ff;
-      flex-wrap: wrap;
-      padding: 0.5rem 0;
-    }
-
-    nav.sub-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #ffffff;
-      border-bottom: 1px solid #ddd;
-      flex-wrap: wrap;
-      padding: 0.5rem 0;
-    }
-
-    .nav-links a,
-    .sub-nav a {
-      padding: 0.75rem 1rem;
-      color: #002855;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    .nav-links a:hover,
-    .sub-nav a:hover {
-      background-color: #d6dfff;
-      padding: 0.75rem 1rem;
-      border-radius: 4px;
-    }
-
-    main {
-      padding: 2rem;
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    footer {
-      background-color: #002855;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.875rem;
-    }
-
-    @media (max-width: 600px) {
-      header img {
-        width: 100px;
-      }
-
-      header h1 {
-        font-size: 1.25rem;
-      }
-
-      .search-bar {
-        position: static;
-        margin-top: 1rem;
-      }
-
-      nav.nav-links,
-      nav.sub-nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      main {
-        padding: 1rem;
-      }
-    }
+    .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.on { opacity: 1; transform: translateY(0); }
+    .img-frame { border-radius: 1.25rem; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.08); }
   </style>
 </head>
-<body>
-  <header>
-    <a href="about.html"><img src="logo.png" alt="TMT Foundation Logo" /></a>
-    <h1>The Triton Mock Trial Foundation</h1>
-    <p>Supporting Mock Trial at UCSD</p>
-    <div class="search-bar">
-      <input type="text" placeholder="Search..." />
+<body class="bg-white text-slate-800 font-body">
+  <!-- Announcement Bar -->
+  <div class="bg-brand.gold text-brand.blue text-sm sm:text-base">
+    <div class="mx-auto max-w-7xl px-4 py-2 text-center font-medium">
+      🎉 We’re live! Help fund student advocacy at UC San Diego — <a href="#donate" class="underline underline-offset-4">make a gift today</a>.
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+    <div class="mx-auto max-w-7xl px-4">
+      <div class="flex items-center justify-between h-16">
+        <a href="/index.html" class="flex items-center gap-3">
+          <img src="/assets/tmt-logo-blue-gold.svg" alt="TMT Foundation" class="h-9 w-auto" onerror="this.style.display='none'" />
+          <span class="font-display text-lg font-bold tracking-wide text-brand.blue">TMT Foundation</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 font-medium">
+          <a href="/about.html" class="hover:text-brand.blue">About</a>
+          <a href="#mission" class="hover:text-brand.blue">Mission</a>
+          <a href="#impact" class="hover:text-brand.blue">Impact</a>
+          <a href="#events" class="hover:text-brand.blue">Events</a>
+          <a href="#team" class="hover:text-brand.blue">Team</a>
+          <a href="#contact" class="hover:text-brand.blue">Contact</a>
+        </nav>
+        <div class="hidden md:flex items-center gap-3">
+          <a href="#newsletter" class="px-3 py-2 text-sm rounded-full border border-slate-200 hover:border-brand.blue">Join newsletter</a>
+          <a href="#donate" class="px-4 py-2 rounded-full bg-brand.blue text-white font-semibold shadow-soft hover:opacity-90">Donate</a>
+        </div>
+        <button id="menuBtn" class="md:hidden inline-flex items-center justify-center p-2 rounded-md hover:bg-slate-100" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile panel -->
+    <div id="mobilePanel" class="md:hidden hidden border-t border-slate-100 bg-white">
+      <div class="px-4 py-4 flex flex-col gap-3">
+        <a href="/about.html" class="py-2">About</a>
+        <a href="#mission" class="py-2">Mission</a>
+        <a href="#impact" class="py-2">Impact</a>
+        <a href="#events" class="py-2">Events</a>
+        <a href="#team" class="py-2">Team</a>
+        <a href="#contact" class="py-2">Contact</a>
+        <div class="flex gap-2 pt-2">
+          <a href="#newsletter" class="flex-1 px-3 py-2 text-center rounded-full border border-slate-200">Newsletter</a>
+          <a href="#donate" class="flex-1 px-3 py-2 text-center rounded-full bg-brand.blue text-white">Donate</a>
+        </div>
+      </div>
     </div>
   </header>
 
-  <nav class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="calendar.html">Calendar</a>
-    <a href="join.html">Join</a>
-    <a href="donate.html">Donate</a>
-    <a href="contact.html">Contact</a>
-  </nav>
+  <!-- Hero -->
+  <section id="home" class="relative overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 pt-16 pb-20 sm:pt-24 sm:pb-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <p class="inline-flex items-center gap-2 text-brand.blue/80 font-medium bg-brand.gold/20 border border-brand.gold/50 rounded-full px-3 py-1 w-max">New · 2025–26 season kickoff</p>
+          <h1 class="mt-4 font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+            Empowering student advocates at <span class="text-brand.blue">UC San Diego</span>
+          </h1>
+          <p class="mt-4 text-lg text-slate-600 max-w-xl">The Triton Mock Trial Foundation funds travel, tournaments, and training so students can thrive in competition and beyond.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#donate" class="px-6 py-3 rounded-full bg-brand.blue text-white font-semibold shadow-soft hover:opacity-90">Donate now</a>
+            <a href="#mission" class="px-6 py-3 rounded-full border border-slate-300 hover:border-brand.blue">Our mission</a>
+          </div>
+        </div>
+        <div class="reveal lg:justify-self-end">
+          <div class="img-frame">
+            <img src="/assets/hero-team.jpg" alt="UCSD Mock Trial team" class="w-full h-auto" onerror="this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1600&auto=format&fit=crop'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <nav class="sub-nav">
-    <a href="membership.html">Membership</a>
-    <a href="committees.html">Committees</a>
-    <a href="tournaments.html">Tournaments</a>
-    <a href="events.html">Events</a>
-  </nav>
+  <!-- Newsletter -->
+  <section id="newsletter" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-12 sm:py-16">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold">Get insider updates</h2>
+          <p class="mt-2 text-slate-600">Be the first to hear about scrimmages, travel updates, and volunteer opportunities. We’ll only email when it matters.</p>
+        </div>
+        <form class="reveal grid sm:grid-cols-[1fr_auto] gap-3" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+          <input type="email" required placeholder="Your email" class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand.gold" />
+          <button class="px-6 py-3 rounded-xl bg-brand.gold text-brand.blue font-semibold shadow-soft hover:opacity-90">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-  <main>
-    <h2>Welcome to the Triton Mock Trial Foundation</h2>
-    <p>
-      The Triton Mock Trial Foundation is dedicated to supporting the Mock Trial at UCSD student organization and trial teams by providing resources, mentorship, and alumni engagement.
-    </p>
-    <p>
-      Whether you're a current student, proud alum, or passionate supporter of the art of trial advocacy, we invite you to explore our community and contribute to the future of collegiate mock trial in San Diego.
-    </p>
-  </main>
+  <!-- Mission -->
+  <section id="mission" class="relative">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="reveal order-2 lg:order-1">
+          <div class="img-frame">
+            <img src="/assets/courtroom.jpg" alt="Students in courtroom" class="w-full h-auto" onerror="this.src='https://images.unsplash.com/photo-1555371363-3f3b9b3a6731?q=80&w=1600&auto=format&fit=crop'" />
+          </div>
+        </div>
+        <div class="reveal order-1 lg:order-2">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold">Our mission</h2>
+          <p class="mt-4 text-slate-700 leading-relaxed">We remove financial barriers so UCSD students can compete at the highest level of collegiate mock trial. Donations directly cover tournament fees, travel, coaching resources, and need-based support.</p>
+          <ul class="mt-6 space-y-3">
+            <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand.gold"></span> <span>Equity-first funding for competitors</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand.gold"></span> <span>Professional coaching & mentorship</span></li>
+            <li class="flex items-start gap-3"><span class="mt-1 h-2.5 w-2.5 rounded-full bg-brand.gold"></span> <span>Travel grants & tournament underwriting</span></li>
+          </ul>
+          <div class="mt-6">
+            <a href="#donate" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand.blue text-white font-semibold shadow-soft">Support the mission</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <footer>
-    © 2025 Triton Mock Trial Foundation. All rights reserved.
+  <!-- Impact Cards -->
+  <section id="impact" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <h2 class="reveal text-center font-display text-3xl sm:text-4xl font-extrabold">What your gift makes possible</h2>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-semibold text-lg">Trips funded</h3>
+          <p class="mt-2 text-slate-600">Cover flights, lodging, and registration so cost never benches a competitor.</p>
+        </article>
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-semibold text-lg">Training & materials</h3>
+          <p class="mt-2 text-slate-600">Case binders, exhibits, tech, and more—everything needed to compete.</p>
+        </article>
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft">
+          <h3 class="font-semibold text-lg">Need-based support</h3>
+          <p class="mt-2 text-slate-600">Microgrants that make participation possible for every student.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section id="events">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <div class="reveal text-center max-w-2xl mx-auto">
+        <h2 class="font-display text-3xl sm:text-4xl font-extrabold">Events</h2>
+        <p class="mt-2 text-slate-600">Come meet the team, watch a scrimmage, or join a fundraiser night.</p>
+      </div>
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="reveal p-5 rounded-2xl border border-slate-200 hover:shadow-soft transition">
+          <p class="text-sm text-slate-500">Sep 14, 2025</p>
+          <h3 class="mt-1 font-semibold">Fall Kickoff Scrimmage</h3>
+          <p class="mt-2 text-slate-600">UCSD campus · Free</p>
+          <a href="#" class="mt-4 inline-block text-brand.blue font-semibold">Details →</a>
+        </article>
+        <article class="reveal p-5 rounded-2xl border border-slate-200 hover:shadow-soft transition">
+          <p class="text-sm text-slate-500">Oct 5, 2025</p>
+          <h3 class="mt-1 font-semibold">Community Night & Fundraiser</h3>
+          <p class="mt-2 text-slate-600">La Jolla · RSVP</p>
+          <a href="#" class="mt-4 inline-block text-brand.blue font-semibold">Details →</a>
+        </article>
+        <article class="reveal p-5 rounded-2xl border border-slate-200 hover:shadow-soft transition">
+          <p class="text-sm text-slate-500">Nov 2–3, 2025</p>
+          <h3 class="mt-1 font-semibold">Invitational Tournament</h3>
+          <p class="mt-2 text-slate-600">Bay Area · Schedule</p>
+          <a href="#" class="mt-4 inline-block text-brand.blue font-semibold">Details →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Donate -->
+  <section id="donate" class="bg-brand.blue">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24 text-white">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold">Fuel the season</h2>
+          <p class="mt-3 text-white/90">Your tax-deductible gift directly supports students. Give once or make it monthly.</p>
+          <ul class="mt-6 space-y-2 text-white/90">
+            <li>• $50 covers exhibits and printing</li>
+            <li>• $250 funds a hotel night for two competitors</li>
+            <li>• $1,000 underwrites a full tournament trip</li>
+          </ul>
+          <div class="mt-6 flex gap-3">
+            <a href="#" class="px-6 py-3 rounded-full bg-white text-brand.blue font-semibold">Donate via Donorbox</a>
+            <a href="#contact" class="px-6 py-3 rounded-full border border-white/40">Corporate sponsorships</a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="img-frame">
+            <img src="/assets/donate.jpg" alt="Students competing" class="w-full h-auto" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop'" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="bg-slate-50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <h2 class="reveal text-center font-display text-3xl sm:text-4xl font-extrabold">Board & Advisors</h2>
+      <div class="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft text-center">
+          <img class="mx-auto h-20 w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=400&auto=format&fit=crop" alt="Person" />
+          <h3 class="mt-4 font-semibold">First Last</h3>
+          <p class="text-sm text-slate-500">Board Chair</p>
+        </article>
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft text-center">
+          <img class="mx-auto h-20 w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400&auto=format&fit=crop" alt="Person" />
+          <h3 class="mt-4 font-semibold">First Last</h3>
+          <p class="text-sm text-slate-500">Treasurer</p>
+        </article>
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft text-center">
+          <img class="mx-auto h-20 w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Person" />
+          <h3 class="mt-4 font-semibold">First Last</h3>
+          <p class="text-sm text-slate-500">Secretary</p>
+        </article>
+        <article class="reveal p-6 rounded-2xl bg-white shadow-soft text-center">
+          <img class="mx-auto h-20 w-20 rounded-full object-cover" src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80&w=400&auto=format&fit=crop" alt="Person" />
+          <h3 class="mt-4 font-semibold">Advisor</h3>
+          <p class="text-sm text-slate-500">Advisor</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-start">
+        <div class="reveal">
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold">Contact us</h2>
+          <p class="mt-3 text-slate-600">Questions about giving, events, or volunteering? Send a note and we’ll get back quickly.</p>
+          <ul class="mt-6 space-y-2 text-slate-700">
+            <li><strong>Email:</strong> info@tmtfoundation.org</li>
+            <li><strong>Mailing:</strong> PO Box 1234, La Jolla, CA 92093</li>
+            <li><strong>EIN:</strong> 12-3456789</li>
+          </ul>
+        </div>
+        <form class="reveal grid gap-4" onsubmit="event.preventDefault(); alert('Message sent!');">
+          <input required placeholder="Full name" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand.gold" />
+          <input type="email" required placeholder="Email" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand.gold" />
+          <textarea required rows="5" placeholder="How can we help?" class="px-4 py-3 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand.gold"></textarea>
+          <button class="px-6 py-3 rounded-xl bg-brand.gold text-brand.blue font-semibold shadow-soft hover:opacity-90">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 py-10">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p class="text-sm text-slate-600">© <span id="year"></span> Triton Mock Trial Foundation. All rights reserved.</p>
+        <div class="flex items-center gap-4 text-slate-500">
+          <a href="#" aria-label="Instagram" class="hover:text-brand.blue">Instagram</a>
+          <a href="#" aria-label="Facebook" class="hover:text-brand.blue">Facebook</a>
+          <a href="#" aria-label="LinkedIn" class="hover:text-brand.blue">LinkedIn</a>
+        </div>
+      </div>
+    </div>
   </footer>
+
+  <script>
+    // Mobile menu toggle
+    const btn = document.getElementById('menuBtn');
+    const panel = document.getElementById('mobilePanel');
+    if (btn) btn.addEventListener('click', () => panel.classList.toggle('hidden'));
+
+    // Reveal on scroll
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
