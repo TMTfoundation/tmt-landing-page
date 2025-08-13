@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About — Triton Mock Trial Foundation</title>
+
   <!-- Tailwind CDN for quick iteration; swap to compiled Tailwind in production -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -11,7 +12,10 @@
       theme: {
         extend: {
           colors: {
-            brand: { blue: '#022547', gold: '#DEAD28' }
+            brand: {
+              blue: '#022547', // matches logo
+              gold: '#DEAD28'  // matches logo
+            }
           },
           fontFamily: {
             display: ['Poppins','ui-sans-serif','system-ui','Segoe UI','Roboto'],
@@ -22,9 +26,11 @@
       }
     }
   </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
   <style>
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.on { opacity: 1; transform: translateY(0); }
@@ -43,7 +49,7 @@
   <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
     <div class="mx-auto max-w-7xl px-4">
       <div class="flex items-center justify-between h-16">
-        <a href="/" class="flex items-center gap-3">
+        <a href="/index.html" class="flex items-center gap-3">
           <img src="/assets/tmt-logo-blue-gold.svg" alt="TMT Foundation" class="h-9 w-auto" onerror="this.style.display='none'" />
           <span class="font-display text-lg font-bold tracking-wide text-brand.blue">TMT Foundation</span>
         </a>
@@ -224,7 +230,7 @@
         </a>
       </div>
       <div class="reveal mt-8 text-center">
-        <a href="/docs/one-pager.pdf" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand.blue text-white font-semibold shadow-soft">Download our 1‑pager</a>
+        <a href="/docs/one-pager.pdf" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand.blue text-white font-semibold shadow-soft">Download our 1-pager</a>
       </div>
     </div>
   </section>
@@ -285,7 +291,9 @@
   <section class="bg-slate-50">
     <div class="mx-auto max-w-7xl px-4 py-16 sm:py-24">
       <h2 class="reveal font-display text-3xl sm:text-4xl font-extrabold text-center">FAQ</h2>
-      <div class="mt-10 grid md:grid-cols-2 gap-8">
+    </div>
+    <div class="mx-auto max-w-7xl px-4 pb-16 sm:pb-24">
+      <div class="grid md:grid-cols-2 gap-8">
         <div class="reveal">
           <h3 class="font-semibold">Are donations tax-deductible?</h3>
           <p class="text-slate-600 mt-2">Yes. We’re organized as a public charity. You’ll receive a receipt for your records.</p>
